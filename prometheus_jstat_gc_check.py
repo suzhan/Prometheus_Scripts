@@ -9,7 +9,8 @@ from prometheus_client import Gauge,start_http_server
 
 
 jstat_cmd = "/ops/jdk8/bin/jstat"
-jvmname_cmd = "ps -ef | grep -v grep | grep war | awk '{print $24,$2}' |  cut -d '/' -f 5 "
+jvmname_cmd = "sudo /ops/jdk8/bin/jcmd | grep war | awk '{print $2,$1}' | cut -d '/' -f 5 "
+# jvmname_cmd = "ps -ef | grep -v grep | grep war | awk '{print $24,$2}' |  cut -d '/' -f 5 "
 
 
 
